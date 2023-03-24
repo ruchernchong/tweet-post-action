@@ -25,9 +25,9 @@ const tweetItem = (tweet, slug) => {
 
   try {
     const twitterClient = new TwitterApi(tokens);
-    // twitterClient.v2
-    //   .tweet(newTweetWithLimit)
-    //   .then(() => console.log("Tweeted!"));
+    twitterClient.v2
+      .tweet(newTweetWithLimit)
+      .then(() => console.log("Tweeted!"));
   } catch (e) {
     core.setFailed(e.message);
   }
