@@ -1,0 +1,11 @@
+name: 'Tweet Post'
+description: "Automatically tweets the new post to Twitter"
+author: "ruchernchong"
+inputs:
+  url:
+    description: 'The URL to tweet'
+    required: true
+    default: ""
+runs:
+  using: "node16"
+  main: "dist/index.js"

@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  test_tweet_item:
+    runs-on: ubuntu-latest
+    name: Tweeting new post to Twitter
+    steps:
+      - name: Tweet Post Action
+        uses: ./
+        with:
+          hostname: https://ruchern.xyz
+        env:
+          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
