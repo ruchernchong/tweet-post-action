@@ -10,7 +10,8 @@ core.setSecret("access_token");
 core.setSecret("access_token_secret");
 
 const tweetItem = (tweet, slug) => {
-  const newTweet = `New post: ${core.getInput("hostname")}/${slug}`;
+  const HOSTNAME = core.getInput("hostname", { required: true });
+  const newTweet = `New post: ${HOSTNAME}/${slug}`;
   console.log(`newTweet`, newTweet);
 
   const END_WITH = core.getInput("end-with") || "...";
