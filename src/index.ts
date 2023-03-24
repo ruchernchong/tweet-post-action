@@ -35,7 +35,10 @@ const tweetItem = (tweet, slug) => {
 };
 
 const getTweetData = () => {
-  const POSTS_FOLDER = core.getInput("posts-folder", { required: true });
+  const POSTS_FOLDER = path.resolve(
+    __dirname,
+    core.getInput("posts-folder") || "/"
+  );
 
   let latestFile, slug;
   glob("**/*.md", {
