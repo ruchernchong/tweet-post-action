@@ -39,7 +39,7 @@ const getTweetData = () => {
 
   let latestFile, slug;
   glob("**/*.md", {
-    cwd: path.resolve(__dirname, POSTS_FOLDER),
+    cwd: POSTS_FOLDER,
   }).then(async (files) => {
     const filesArray = (array) => {
       return Promise.all(
@@ -53,7 +53,7 @@ const getTweetData = () => {
     latestFile = allFiles.map((file) => ({ file }));
 
     const metaData = async (latestFile) => {
-      const filePath = path.resolve(__dirname, POSTS_FOLDER);
+      const filePath = POSTS_FOLDER;
       const latest = filePath.substring(0, filePath.lastIndexOf("/"));
 
       slug = latest.split("/").at(-1);
