@@ -46,18 +46,18 @@ const getTweetData = () => {
     let allFiles = await filesArray(files);
     latestFile = allFiles.map((file) => file).at(0);
 
-    const metaData = async (latestFile) => {
+    const tweet = async (latestFile) => {
       const filePath = `${PATH_TO_POSTS}/${latestFile}`;
       const latest = filePath.substring(0, filePath.lastIndexOf(".md"));
 
       slug = latest.split("/").at(-1);
       console.log(`slug`, slug);
 
-      tweetItem(metaData, slug);
+      tweetItem(tweet, slug);
     };
 
     if (latestFile) {
-      return metaData(latestFile);
+      return tweet(latestFile);
     }
   });
 };
