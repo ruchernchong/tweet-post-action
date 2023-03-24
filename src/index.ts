@@ -9,7 +9,7 @@ core.setSecret("consumer_secret");
 core.setSecret("access_token");
 core.setSecret("access_token_secret");
 
-const tweetItem = (tweet, slug) => {
+const tweetItem = (slug: string) => {
   const HOSTNAME = core.getInput("hostname", { required: true });
 
   const newTweet = `New post: ${HOSTNAME}/${slug}`;
@@ -37,28 +37,22 @@ const tweetItem = (tweet, slug) => {
 const getTweetData = () => {
   const PATH_TO_POSTS = path.resolve(core.getInput("path", { required: true }));
 
-  let latestFile, slug;
   glob("**/*.md", {
     cwd: PATH_TO_POSTS,
   }).then(async (files) => {
-    const filesArray = (array) => Promise.all(array.map((file) => file));
+    const allFiles = await Promise.all(files.map((file) => file));
+    const latestFile = allFiles.map((file) => file).at(0);
+    const filePath = `${PATH_TO_POSTS}/${latestFile}`;
+    const latest = filePath.substring(0, filePath.lastIndexOf(".md"));
 
-    let allFiles = await filesArray(files);
-    latestFile = allFiles.map((file) => file).at(0);
+    const slug = latest.split("/").at(-1);
+    console.log(`slug`, slug);
 
-    const tweet = async (latestFile) => {
-      const filePath = `${PATH_TO_POSTS}/${latestFile}`;
-      const latest = filePath.substring(0, filePath.lastIndexOf(".md"));
-
-      slug = latest.split("/").at(-1);
-      console.log(`slug`, slug);
-
-      tweetItem(tweet, slug);
-    };
-
-    if (latestFile) {
-      return tweet(latestFile);
+    if (slug) {
+      tweetItem(slug);
     }
+
+    return;
   });
 };
 
