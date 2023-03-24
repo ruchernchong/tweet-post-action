@@ -1,4 +1,4 @@
-name: 'Automatic tweet new post on create'
+name: "Automatic tweet new post on create"
 description: "Automatically tweets the new post to Twitter"
 author: "ruchernchong"
 branding:
@@ -6,11 +6,14 @@ branding:
   color: "blue"
 inputs:
   hostname:
-    description: 'The hostname of the post to be tweeted'
+    description: "The hostname of the post to be tweeted"
     required: true
   path:
-    description: 'The path of the folder containing your posts'
+    description: "The path of the folder containing your posts"
     required: true
+  end-with:
+    description: "For tweets that exceeded the limits, the tweet will have to be truncated with an ellipses by default"
+    default: "..."
 runs:
   using: "node16"
   main: "dist/index.js"
