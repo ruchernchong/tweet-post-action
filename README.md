@@ -1,4 +1,6 @@
-# Tweet Item Action
+# Tweet Post Action
+
+[![.github/workflows/main.yml](https://github.com/ruchernchong/tweet-post-action/actions/workflows/main.yml/badge.svg)](https://github.com/ruchernchong/tweet-post-action/actions/workflows/main.yml)
 
 This action creates a tweet to Twitter automatically based on a newly created item.
 
@@ -15,7 +17,7 @@ This action creates a tweet to Twitter automatically based on a newly created it
 ## Example usage
 
 ```yaml
-uses: actions/tweet-post@v1
+uses: ruchernchong/tweet-post@v1
 with:
   hostname: "https://example.com"
   path: "posts"

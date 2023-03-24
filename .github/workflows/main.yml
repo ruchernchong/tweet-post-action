@@ -3,7 +3,7 @@ on: [push]
 jobs:
   test_tweet_item:
     runs-on: ubuntu-latest
-    name: Tweeting new post to Twitter
+    name: Test auto tweeting new post to Twitter
     steps:
       - name: Checkout
         uses: actions/checkout@v3
