@@ -3,9 +3,14 @@
 This action creates a tweet to Twitter automatically based on a newly created item.
 
 ## Inputs
+
 ### `url`
 
-**Required** The url of the item.
+**Required** - The url of the item.
+
+### `posts-folder`
+
+The path to the posts folder relative to the root directory. e.g. "/posts"
 
 ## Example usage
 
@@ -13,6 +18,7 @@ This action creates a tweet to Twitter automatically based on a newly created it
 uses: actions/tweet-post@v1
 with:
   hostname: "https://example.com"
+  posts-folder: "/posts"
 env:
   CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
   CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
