@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruchernchong/tweet-post-action.git"
+  },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "ncc build src/*",
+    "build": "ncc build src/index.ts",
     "test": "jest --watchAll"
   },
   "keywords": [],
-  "author": "",
+  "author": "ruchernchong",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.21.3",
