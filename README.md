@@ -6,9 +6,9 @@ This action automatically creates a tweet on Twitter when a new post is being co
 
 ## Inputs
 
-### `url`
+### `hostname`
 
-**Required** - The url of the item.
+**Required** - The hostname of the item. e.g. `https://example.com/blog`
 
 ### `path`
 
