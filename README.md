@@ -2,7 +2,7 @@
 
 [![.github/workflows/main.yml](https://github.com/ruchernchong/tweet-post-action/actions/workflows/main.yml/badge.svg)](https://github.com/ruchernchong/tweet-post-action/actions/workflows/main.yml)
 
-This action creates a tweet to Twitter automatically based on a newly created item.
+This action automatically creates a tweet on Twitter when a new post is being committed to a GitHub repository.
 
 ## Inputs
 
