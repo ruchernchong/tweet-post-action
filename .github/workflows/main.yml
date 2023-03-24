@@ -11,7 +11,7 @@ jobs:
         uses: ./
         with:
           hostname: https://ruchern.xyz
-          posts-folder: 'items'
+          posts-folder: '/posts'
         env:
           CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
           CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
