@@ -1,6 +1,9 @@
 name: 'Automatic tweet new post on create'
 description: "Automatically tweets the new post to Twitter"
 author: "ruchernchong"
+branding:
+  icon: "share"
+  color: "blue"
 inputs:
   hostname:
     description: 'The hostname of the post to be tweeted'
