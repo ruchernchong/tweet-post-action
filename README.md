@@ -8,7 +8,7 @@ This action creates a tweet to Twitter automatically based on a newly created it
 
 **Required** - The url of the item.
 
-### `posts-folder`
+### `path`
 
 The path to the posts folder relative to the root directory. e.g. "/posts"
 
@@ -18,7 +18,7 @@ The path to the posts folder relative to the root directory. e.g. "/posts"
 uses: actions/tweet-post@v1
 with:
   hostname: "https://example.com"
-  posts-folder: "/posts"
+  path: "/posts"
 env:
   CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
   CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
