@@ -5,6 +5,9 @@ inputs:
   hostname:
     description: 'The hostname of the post to be tweeted'
     required: true
+  posts-folder:
+    description: 'The path of the folder containing your posts'
+    required: true
 runs:
   using: "node16"
   main: "dist/index.js"

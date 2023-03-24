@@ -11,6 +11,7 @@ core.setSecret("access_token_secret");
 
 const tweetItem = (tweet, slug) => {
   const HOSTNAME = core.getInput("hostname", { required: true });
+
   const newTweet = `New post: ${HOSTNAME}/${slug}`;
   console.log(`newTweet`, newTweet);
 
@@ -34,8 +35,12 @@ const tweetItem = (tweet, slug) => {
 };
 
 const getTweetData = () => {
+  const POSTS_FOLDER = core.getInput("posts-folder", { required: true });
+
   let latestFile, slug;
-  glob("**/*.md", { cwd: path.resolve(__dirname) }).then(async (files) => {
+  glob("**/*.md", {
+    cwd: path.resolve(__dirname, POSTS_FOLDER),
+  }).then(async (files) => {
     const filesArray = (array) => {
       return Promise.all(
         array.map((file) => {
@@ -48,7 +53,7 @@ const getTweetData = () => {
     latestFile = allFiles.map((file) => ({ file }));
 
     const metaData = async (latestFile) => {
-      const filePath = path.resolve(__dirname);
+      const filePath = path.resolve(__dirname, POSTS_FOLDER);
       const latest = filePath.substring(0, filePath.lastIndexOf("/"));
 
       slug = latest.split("/").at(-1);
