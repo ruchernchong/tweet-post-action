@@ -2,10 +2,9 @@ name: 'Tweet Post'
 description: "Automatically tweets the new post to Twitter"
 author: "ruchernchong"
 inputs:
-  url:
-    description: 'The URL to tweet'
+  hostname:
+    description: 'The hostname of the post to be tweeted'
     required: true
-    default: ""
 runs:
   using: "node16"
   main: "dist/index.js"
