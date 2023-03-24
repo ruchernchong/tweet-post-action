@@ -12,7 +12,7 @@ This action automatically creates a tweet on Twitter when a new post is being co
 
 ### `path`
 
-**Required** - The path to the posts folder relative to the root directory. e.g. "/posts"
+**Required** - The path to the posts folder relative to the root directory. e.g. `posts`
 
 ## Example usage
 
