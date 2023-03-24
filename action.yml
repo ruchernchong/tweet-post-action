@@ -1,4 +1,4 @@
-name: 'Tweet Post'
+name: 'Automatic tweet new post on create'
 description: "Automatically tweets the new post to Twitter"
 author: "ruchernchong"
 inputs:
