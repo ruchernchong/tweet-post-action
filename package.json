@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "ncc build -m src/index.ts",
+    "build": "ncc build -m src/index.ts --license LICENSE",
     "test": "jest --watchAll"
   },
   "keywords": [],
