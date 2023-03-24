@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Tweeting new post to Twitter
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Tweet Post Action
         uses: ./
         with:
