@@ -1,6 +1,6 @@
 import { glob } from "glob";
 import path from "path";
-import core from "@actions/core";
+import * as core from "@actions/core";
 import { TwitterApi } from "twitter-api-v2";
 import { tokens } from "./config/credentials";
 
