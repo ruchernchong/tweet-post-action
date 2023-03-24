@@ -7,13 +7,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: List Directory
-        run: ls -la
       - name: Tweet Post Action
         uses: ./
         with:
           hostname: https://ruchern.xyz
-          path: '/posts'
+          path: 'posts'
         env:
           CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
           CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}

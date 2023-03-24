@@ -1,4 +1,4 @@
-import { glob } from "glob";
+import glob from "glob";
 import path from "path";
 import * as core from "@actions/core";
 import { TwitterApi } from "twitter-api-v2";
@@ -35,11 +35,11 @@ const tweetItem = (tweet, slug) => {
 };
 
 const getTweetData = () => {
-  const POSTS_FOLDER = path.resolve(__dirname, core.getInput("path") || "/");
+  const PATH_TO_POSTS = path.resolve(core.getInput("path", { required: true }));
 
   let latestFile, slug;
   glob("**/*.md", {
-    cwd: POSTS_FOLDER,
+    cwd: PATH_TO_POSTS,
   }).then(async (files) => {
     const filesArray = (array) => {
       return Promise.all(
@@ -50,11 +50,11 @@ const getTweetData = () => {
     };
 
     let allFiles = await filesArray(files);
-    latestFile = allFiles.map((file) => ({ file }));
+    latestFile = allFiles.map((file) => file).at(0);
 
     const metaData = async (latestFile) => {
-      const filePath = POSTS_FOLDER;
-      const latest = filePath.substring(0, filePath.lastIndexOf("/"));
+      const filePath = `${PATH_TO_POSTS}/${latestFile.file}`;
+      const latest = filePath.substring(0, filePath.lastIndexOf(".md"));
 
       slug = latest.split("/").at(-1);
       console.log(`slug`, slug);
